@@ -1,0 +1,38 @@
+{
+  "name": "mari-jewellers-erp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Comprehensive ERP system for MARI Jewellers",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "db:migrate": "cd apps/api && npm run db:migrate",
+    "db:seed": "cd apps/api && npm run db:seed",
+    "db:seed:safe": "cd apps/api && npm run db:seed:safe",
+    "db:init": "cd apps/api && npm run db:init",
+    "db:prepare": "cd apps/api && npm run db:prepare",
+    "db:studio": "cd apps/api && npm run db:studio",
+    "script:recreate-admin": "cd apps/api && npm run script:recreate-admin"
+  },
+  "devDependencies": {
+    "@turbo/gen": "^2.3.3",
+    "turbo": "^2.3.3",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "packageManager": "npm@10.2.4"
+}

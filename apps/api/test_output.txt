@@ -1,0 +1,493 @@
+
+> @mari-erp/api@1.0.0 test
+> vitest src/modules/auth/auth.rbac.test.ts --run
+
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90m/Users/marijewellers/ERP-Cluade/apps/api[39m
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts
+[22m[39m2026-02-11 11:00:57 [[33mwarn[39m]: WhatsApp credentials not configured. WhatsApp features will be disabled. 
+
+Sourcemap for "/Users/marijewellers/ERP-Cluade/node_modules/node-cron/dist/esm/node-cron.js" points to missing source files
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts
+[22m[39m2026-02-11 11:00:57 [[33mwarn[39m]: Email configuration not found. Email notifications will be logged but not sent. 
+2026-02-11 11:00:57 [[33mwarn[39m]: Please set EMAIL_HOST, EMAIL_PORT, EMAIL_USER, and EMAIL_PASSWORD environment variables. 
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: SET client_min_messages TO WARNING
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: TRUNCATE TABLE users, stores, roles CASCADE
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: insert into "stores" ("id", "name", "code", "address", "phone", "email", "gstin", "parent_store_id", "is_active", "created_at", "updated_at") values (default, $1, $2, default, default, default, default, default, $3, default, default) returning "id", "name", "code", "address", "phone", "email", "gstin", "parent_store_id", "is_active", "created_at", "updated_at" -- params: ["Test Store", "TEST-15189810", true]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: insert into "permissions" ("id", "resource", "action", "description", "created_at") values (default, $1, $2, $3, default) returning "id", "resource", "action", "description", "created_at" -- params: ["inventory", "read", "Read Inventory"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: insert into "permissions" ("id", "resource", "action", "description", "created_at") values (default, $1, $2, $3, default) returning "id", "resource", "action", "description", "created_at" -- params: ["inventory", "create", "Create Inventory"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: select "id", "name", "description", "created_at", "updated_at" from "roles" where "roles"."name" = $1 limit $2 -- params: ["viewer_3feb9fa4-ba36-4f0e-9c30-32e4f9b58dd0", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: insert into "roles" ("id", "name", "description", "created_at", "updated_at") values (default, $1, $2, default, default) returning "id", "name", "description", "created_at", "updated_at" -- params: ["viewer_3feb9fa4-ba36-4f0e-9c30-32e4f9b58dd0", "Test Role"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: select "id", "name", "description", "created_at", "updated_at" from "roles" where "roles"."name" = $1 limit $2 -- params: ["admin_8102e572-e64f-435e-a256-e4b87b7accff", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: insert into "roles" ("id", "name", "description", "created_at", "updated_at") values (default, $1, $2, default, default) returning "id", "name", "description", "created_at", "updated_at" -- params: ["admin_8102e572-e64f-435e-a256-e4b87b7accff", "Test Role"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: insert into "role_permissions" ("role_id", "permission_id") values ($1, $2) -- params: ["9e9cfbfa-dd9b-4aff-acac-d81b93e2844a", "b21301d9-8fbf-4afa-837c-7f71fc5c06de"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: insert into "role_permissions" ("role_id", "permission_id") values ($1, $2) -- params: ["cd61fba8-5c39-4be5-8a70-9d9cceee7266", "b21301d9-8fbf-4afa-837c-7f71fc5c06de"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: insert into "role_permissions" ("role_id", "permission_id") values ($1, $2) -- params: ["cd61fba8-5c39-4be5-8a70-9d9cceee7266", "d06aeed6-c0d9-4ec7-9817-884858e45b62"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: insert into "users" ("id", "email", "password_hash", "full_name", "phone", "is_active", "created_at", "updated_at", "deleted_at") values (default, $1, $2, $3, default, $4, default, default, default) returning "id", "email", "password_hash", "full_name", "phone", "is_active", "created_at", "updated_at", "deleted_at" -- params: ["viewer-74f22a65-2543-4d84-b05d-383b1c695f2c@example.com", "$2b$10$aCHtoDhdbU3Fp2mZXd2Xb.SLk1lSYXOVA3wZ38nTJvS1jRoPr/mAm", "Test User", true]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: insert into "user_roles" ("id", "user_id", "role_id", "store_id", "can_manipulate_inventory", "created_at") values (default, $1, $2, $3, default, default) returning "id", "user_id", "role_id", "store_id", "can_manipulate_inventory", "created_at" -- params: ["099452d8-46ff-456c-9851-20325fff6ca0", "9e9cfbfa-dd9b-4aff-acac-d81b93e2844a", "97709eca-cb19-4bf9-b82d-b1f1bdf41f73"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: insert into "users" ("id", "email", "password_hash", "full_name", "phone", "is_active", "created_at", "updated_at", "deleted_at") values (default, $1, $2, $3, default, $4, default, default, default) returning "id", "email", "password_hash", "full_name", "phone", "is_active", "created_at", "updated_at", "deleted_at" -- params: ["admin-d374e6d4-6bad-4706-942d-8c9eea2a01ef@example.com", "$2b$10$mzzJtW6lvlWVOBO3FS0kzemZQ0NzSPX/7ZQzudhNEgAIK1EnP7PQS", "Test User", true]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: insert into "user_roles" ("id", "user_id", "role_id", "store_id", "can_manipulate_inventory", "created_at") values (default, $1, $2, $3, default, default) returning "id", "user_id", "role_id", "store_id", "can_manipulate_inventory", "created_at" -- params: ["1e078161-74cf-4a9e-8848-9cb4f5128543", "cd61fba8-5c39-4be5-8a70-9d9cceee7266", "97709eca-cb19-4bf9-b82d-b1f1bdf41f73"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: select "id", "email", "password_hash", "full_name", "phone", "is_active", "created_at", "updated_at", "deleted_at" from "users" where "users"."email" = $1 limit $2 -- params: ["viewer-74f22a65-2543-4d84-b05d-383b1c695f2c@example.com", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39m[DEBUG] Login attempt for viewer-74f22a65-2543-4d84-b05d-383b1c695f2c@example.com
+[DEBUG] Input password: password123
+[DEBUG] Stored hash: $2b$10$aCHtoDhdbU3Fp2mZXd2Xb.SLk1lSYXOVA3wZ38nTJvS1jRoPr/mAm
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39m[DEBUG] Password valid: true
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: select "userRoles"."id", "userRoles"."user_id", "userRoles"."role_id", "userRoles"."store_id", "userRoles"."can_manipulate_inventory", "userRoles"."created_at", "userRoles_store"."data" as "store", "userRoles_role"."data" as "role" from "user_roles" "userRoles" left join lateral (select json_build_array("userRoles_store"."id", "userRoles_store"."name", "userRoles_store"."code", "userRoles_store"."address", "userRoles_store"."phone", "userRoles_store"."email", "userRoles_store"."gstin", "userRoles_store"."parent_store_id", "userRoles_store"."is_active", "userRoles_store"."created_at", "userRoles_store"."updated_at") as "data" from (select * from "stores" "userRoles_store" where "userRoles_store"."id" = "userRoles"."store_id" limit $1) "userRoles_store") "userRoles_store" on true left join lateral (select json_build_array("userRoles_role"."id", "userRoles_role"."name", "userRoles_role"."description", "userRoles_role"."created_at", "userRoles_role"."updated_at") as "data" from (select * from "roles" "userRoles_role" where "userRoles_role"."id" = "userRoles"."role_id" limit $2) "userRoles_role") "userRoles_role" on true where ("userRoles"."user_id" = $3 and "userRoles"."store_id" = $4) limit $5 -- params: [1, 1, "099452d8-46ff-456c-9851-20325fff6ca0", "97709eca-cb19-4bf9-b82d-b1f1bdf41f73", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39m2026-02-11 11:00:58 [[32minfo[39m]: User logged in: viewer-74f22a65-2543-4d84-b05d-383b1c695f2c@example.com {
+  "userId": "099452d8-46ff-456c-9851-20325fff6ca0",
+  "storeId": "97709eca-cb19-4bf9-b82d-b1f1bdf41f73"
+}
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: select "id", "email", "password_hash", "full_name", "phone", "is_active", "created_at", "updated_at", "deleted_at" from "users" where "users"."id" = $1 limit $2 -- params: ["099452d8-46ff-456c-9851-20325fff6ca0", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: select "id", "name", "code", "address", "phone", "email", "gstin", "parent_store_id", "is_active", "created_at", "updated_at" from "stores" where "stores"."id" = $1 limit $2 -- params: ["97709eca-cb19-4bf9-b82d-b1f1bdf41f73", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: select "userRoles"."id", "userRoles"."user_id", "userRoles"."role_id", "userRoles"."store_id", "userRoles"."can_manipulate_inventory", "userRoles"."created_at", "userRoles_role"."data" as "role" from "user_roles" "userRoles" left join lateral (select json_build_array("userRoles_role"."id", "userRoles_role"."name", "userRoles_role"."description", "userRoles_role"."created_at", "userRoles_role"."updated_at") as "data" from (select * from "roles" "userRoles_role" where "userRoles_role"."id" = "userRoles"."role_id" limit $1) "userRoles_role") "userRoles_role" on true where ("userRoles"."user_id" = $2 and "userRoles"."store_id" = $3) limit $4 -- params: [1, "099452d8-46ff-456c-9851-20325fff6ca0", "97709eca-cb19-4bf9-b82d-b1f1bdf41f73", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39m2026-02-11 11:00:58 [[33mwarn[39m]: Redis cache miss for permissions {
+  "userId": "099452d8-46ff-456c-9851-20325fff6ca0",
+  "storeId": "97709eca-cb19-4bf9-b82d-b1f1bdf41f73"
+}
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: select "userRoles"."id", "userRoles"."user_id", "userRoles"."role_id", "userRoles"."store_id", "userRoles"."can_manipulate_inventory", "userRoles"."created_at", "userRoles_role"."data" as "role" from "user_roles" "userRoles" left join lateral (select json_build_array("userRoles_role"."id", "userRoles_role"."name", "userRoles_role"."description", "userRoles_role"."created_at", "userRoles_role"."updated_at", "userRoles_role_rolePermissions"."data") as "data" from (select * from "roles" "userRoles_role" where "userRoles_role"."id" = "userRoles"."role_id" limit $1) "userRoles_role" left join lateral (select coalesce(json_agg(json_build_array("userRoles_role_rolePermissions"."role_id", "userRoles_role_rolePermissions"."permission_id", "userRoles_role_rolePermissions_permission"."data")), '[]'::json) as "data" from "role_permissions" "userRoles_role_rolePermissions" left join lateral (select json_build_array("userRoles_role_rolePermissions_permission"."id", "userRoles_role_rolePermissions_permission"."resource", "userRoles_role_rolePermissions_permission"."action", "userRoles_role_rolePermissions_permission"."description", "userRoles_role_rolePermissions_permission"."created_at") as "data" from (select * from "permissions" "userRoles_role_rolePermissions_permission" where "userRoles_role_rolePermissions_permission"."id" = "userRoles_role_rolePermissions"."permission_id" limit $2) "userRoles_role_rolePermissions_permission") "userRoles_role_rolePermissions_permission" on true where "userRoles_role_rolePermissions"."role_id" = "userRoles_role"."id") "userRoles_role_rolePermissions" on true) "userRoles_role" on true where ("userRoles"."user_id" = $3 and "userRoles"."store_id" = $4) -- params: [1, 1, "099452d8-46ff-456c-9851-20325fff6ca0", "97709eca-cb19-4bf9-b82d-b1f1bdf41f73"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39m2026-02-11 11:00:58 [[33mwarn[39m]: Failed to cache permissions {
+  "userId": "099452d8-46ff-456c-9851-20325fff6ca0",
+  "storeId": "97709eca-cb19-4bf9-b82d-b1f1bdf41f73"
+}
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: insert into "sessions" ("id", "user_id", "store_id", "token_hash", "expires_at", "created_at") values (default, $1, $2, $3, $4, default) -- params: ["099452d8-46ff-456c-9851-20325fff6ca0", "97709eca-cb19-4bf9-b82d-b1f1bdf41f73", "1f525541f13a379433c0b1a1b702d8de7407b47c1607b69a111a96a587eb9d79", "2026-02-18T05:30:58.489Z"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: select "id", "email", "password_hash", "full_name", "phone", "is_active", "created_at", "updated_at", "deleted_at" from "users" where "users"."email" = $1 limit $2 -- params: ["admin-d374e6d4-6bad-4706-942d-8c9eea2a01ef@example.com", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39m[DEBUG] Login attempt for admin-d374e6d4-6bad-4706-942d-8c9eea2a01ef@example.com
+[DEBUG] Input password: password123
+[DEBUG] Stored hash: $2b$10$mzzJtW6lvlWVOBO3FS0kzemZQ0NzSPX/7ZQzudhNEgAIK1EnP7PQS
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39m[DEBUG] Password valid: true
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: select "userRoles"."id", "userRoles"."user_id", "userRoles"."role_id", "userRoles"."store_id", "userRoles"."can_manipulate_inventory", "userRoles"."created_at", "userRoles_store"."data" as "store", "userRoles_role"."data" as "role" from "user_roles" "userRoles" left join lateral (select json_build_array("userRoles_store"."id", "userRoles_store"."name", "userRoles_store"."code", "userRoles_store"."address", "userRoles_store"."phone", "userRoles_store"."email", "userRoles_store"."gstin", "userRoles_store"."parent_store_id", "userRoles_store"."is_active", "userRoles_store"."created_at", "userRoles_store"."updated_at") as "data" from (select * from "stores" "userRoles_store" where "userRoles_store"."id" = "userRoles"."store_id" limit $1) "userRoles_store") "userRoles_store" on true left join lateral (select json_build_array("userRoles_role"."id", "userRoles_role"."name", "userRoles_role"."description", "userRoles_role"."created_at", "userRoles_role"."updated_at") as "data" from (select * from "roles" "userRoles_role" where "userRoles_role"."id" = "userRoles"."role_id" limit $2) "userRoles_role") "userRoles_role" on true where ("userRoles"."user_id" = $3 and "userRoles"."store_id" = $4) limit $5 -- params: [1, 1, "1e078161-74cf-4a9e-8848-9cb4f5128543", "97709eca-cb19-4bf9-b82d-b1f1bdf41f73", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39m2026-02-11 11:00:58 [[32minfo[39m]: User logged in: admin-d374e6d4-6bad-4706-942d-8c9eea2a01ef@example.com {
+  "userId": "1e078161-74cf-4a9e-8848-9cb4f5128543",
+  "storeId": "97709eca-cb19-4bf9-b82d-b1f1bdf41f73"
+}
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: select "id", "email", "password_hash", "full_name", "phone", "is_active", "created_at", "updated_at", "deleted_at" from "users" where "users"."id" = $1 limit $2 -- params: ["1e078161-74cf-4a9e-8848-9cb4f5128543", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: select "id", "name", "code", "address", "phone", "email", "gstin", "parent_store_id", "is_active", "created_at", "updated_at" from "stores" where "stores"."id" = $1 limit $2 -- params: ["97709eca-cb19-4bf9-b82d-b1f1bdf41f73", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: select "userRoles"."id", "userRoles"."user_id", "userRoles"."role_id", "userRoles"."store_id", "userRoles"."can_manipulate_inventory", "userRoles"."created_at", "userRoles_role"."data" as "role" from "user_roles" "userRoles" left join lateral (select json_build_array("userRoles_role"."id", "userRoles_role"."name", "userRoles_role"."description", "userRoles_role"."created_at", "userRoles_role"."updated_at") as "data" from (select * from "roles" "userRoles_role" where "userRoles_role"."id" = "userRoles"."role_id" limit $1) "userRoles_role") "userRoles_role" on true where ("userRoles"."user_id" = $2 and "userRoles"."store_id" = $3) limit $4 -- params: [1, "1e078161-74cf-4a9e-8848-9cb4f5128543", "97709eca-cb19-4bf9-b82d-b1f1bdf41f73", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39m2026-02-11 11:00:58 [[33mwarn[39m]: Redis cache miss for permissions {
+  "userId": "1e078161-74cf-4a9e-8848-9cb4f5128543",
+  "storeId": "97709eca-cb19-4bf9-b82d-b1f1bdf41f73"
+}
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: select "userRoles"."id", "userRoles"."user_id", "userRoles"."role_id", "userRoles"."store_id", "userRoles"."can_manipulate_inventory", "userRoles"."created_at", "userRoles_role"."data" as "role" from "user_roles" "userRoles" left join lateral (select json_build_array("userRoles_role"."id", "userRoles_role"."name", "userRoles_role"."description", "userRoles_role"."created_at", "userRoles_role"."updated_at", "userRoles_role_rolePermissions"."data") as "data" from (select * from "roles" "userRoles_role" where "userRoles_role"."id" = "userRoles"."role_id" limit $1) "userRoles_role" left join lateral (select coalesce(json_agg(json_build_array("userRoles_role_rolePermissions"."role_id", "userRoles_role_rolePermissions"."permission_id", "userRoles_role_rolePermissions_permission"."data")), '[]'::json) as "data" from "role_permissions" "userRoles_role_rolePermissions" left join lateral (select json_build_array("userRoles_role_rolePermissions_permission"."id", "userRoles_role_rolePermissions_permission"."resource", "userRoles_role_rolePermissions_permission"."action", "userRoles_role_rolePermissions_permission"."description", "userRoles_role_rolePermissions_permission"."created_at") as "data" from (select * from "permissions" "userRoles_role_rolePermissions_permission" where "userRoles_role_rolePermissions_permission"."id" = "userRoles_role_rolePermissions"."permission_id" limit $2) "userRoles_role_rolePermissions_permission") "userRoles_role_rolePermissions_permission" on true where "userRoles_role_rolePermissions"."role_id" = "userRoles_role"."id") "userRoles_role_rolePermissions" on true) "userRoles_role" on true where ("userRoles"."user_id" = $3 and "userRoles"."store_id" = $4) -- params: [1, 1, "1e078161-74cf-4a9e-8848-9cb4f5128543", "97709eca-cb19-4bf9-b82d-b1f1bdf41f73"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39m2026-02-11 11:00:58 [[33mwarn[39m]: Failed to cache permissions {
+  "userId": "1e078161-74cf-4a9e-8848-9cb4f5128543",
+  "storeId": "97709eca-cb19-4bf9-b82d-b1f1bdf41f73"
+}
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: insert into "sessions" ("id", "user_id", "store_id", "token_hash", "expires_at", "created_at") values (default, $1, $2, $3, $4, default) -- params: ["1e078161-74cf-4a9e-8848-9cb4f5128543", "97709eca-cb19-4bf9-b82d-b1f1bdf41f73", "92f7e688a48a0ce26b01c5de64484cceae9fbdbdca062a4820b6ffabc5c4488b", "2026-02-18T05:30:58.566Z"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to protected route with correct permission
+[22m[39mQuery: select "inventoryItems"."id", "inventoryItems"."store_id", "inventoryItems"."category_id", "inventoryItems"."sku", "inventoryItems"."barcode", "inventoryItems"."name", "inventoryItems"."description", "inventoryItems"."item_type", "inventoryItems"."metal_type", "inventoryItems"."purity", "inventoryItems"."gross_weight", "inventoryItems"."net_weight", "inventoryItems"."stone_weight", "inventoryItems"."making_charges", "inventoryItems"."wastage_percentage", "inventoryItems"."cost_rate_percentage", "inventoryItems"."calculated_cost", "inventoryItems"."cost_calculation_method", "inventoryItems"."is_hallmarked", "inventoryItems"."hallmark_number", "inventoryItems"."huid_number", "inventoryItems"."certification_number", "inventoryItems"."certification_agency", "inventoryItems"."certification_date", "inventoryItems"."image_urls", "inventoryItems"."dimensions", "inventoryItems"."status", "inventoryItems"."sold_at", "inventoryItems"."sold_price", "inventoryItems"."sold_invoice_id", "inventoryItems"."profit", "inventoryItems"."daily_gold_rate", "inventoryItems"."is_active", "inventoryItems"."fine_gold_equivalent", "inventoryItems"."last_valuation_date", "inventoryItems"."current_market_value", "inventoryItems"."unrealized_gain_loss", "inventoryItems"."created_at", "inventoryItems"."updated_at", "inventoryItems"."deleted_at", "inventoryItems"."version", "inventoryItems_category"."data" as "category", "inventoryItems_stones"."data" as "stones", "inventoryItems_stockLevels"."data" as "stockLevels" from "inventory_items" "inventoryItems" left join lateral (select json_build_array("inventoryItems_category"."id", "inventoryItems_category"."name", "inventoryItems_category"."parent_id", "inventoryItems_category"."description", "inventoryItems_category"."requires_length", "inventoryItems_category"."requires_width", "inventoryItems_category"."requires_height", "inventoryItems_category"."requires_internal_size", "inventoryItems_category"."requires_ring_size", "inventoryItems_category"."created_at", "inventoryItems_category"."updated_at") as "data" from (select * from "inventory_categories" "inventoryItems_category" where "inventoryItems_category"."id" = "inventoryItems"."category_id" limit $1) "inventoryItems_category") "inventoryItems_category" on true left join lateral (select coalesce(json_agg(json_build_array("inventoryItems_stones"."id", "inventoryItems_stones"."inventory_item_id", "inventoryItems_stones"."stone_type", "inventoryItems_stones"."count", "inventoryItems_stones"."total_weight", "inventoryItems_stones"."average_weight", "inventoryItems_stones"."shape", "inventoryItems_stones"."color", "inventoryItems_stones"."clarity", "inventoryItems_stones"."cut_grade", "inventoryItems_stones"."certification_number", "inventoryItems_stones"."certification_agency", "inventoryItems_stones"."price_per_carat", "inventoryItems_stones"."created_at", "inventoryItems_stones"."updated_at")), '[]'::json) as "data" from "stones" "inventoryItems_stones" where "inventoryItems_stones"."inventory_item_id" = "inventoryItems"."id") "inventoryItems_stones" on true left join lateral (select coalesce(json_agg(json_build_array("inventoryItems_stockLevels"."id", "inventoryItems_stockLevels"."inventory_item_id", "inventoryItems_stockLevels"."store_id", "inventoryItems_stockLevels"."quantity", "inventoryItems_stockLevels"."reserved_quantity", "inventoryItems_stockLevels"."reorder_level", "inventoryItems_stockLevels"."location", "inventoryItems_stockLevels"."last_counted_at", "inventoryItems_stockLevels"."updated_at", "inventoryItems_stockLevels"."version")), '[]'::json) as "data" from "stock_levels" "inventoryItems_stockLevels" where ("inventoryItems_stockLevels"."inventory_item_id" = "inventoryItems"."id" and "inventoryItems_stockLevels"."store_id" = $2)) "inventoryItems_stockLevels" on true where ("inventoryItems"."store_id" = $3 and "inventoryItems"."is_active" = $4 and "inventoryItems"."status" = $5) order by "inventoryItems"."created_at" desc limit $6 -- params: [1, "97709eca-cb19-4bf9-b82d-b1f1bdf41f73", "97709eca-cb19-4bf9-b82d-b1f1bdf41f73", true, "available", 50]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: SET client_min_messages TO WARNING
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: TRUNCATE TABLE users, stores, roles CASCADE
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: insert into "stores" ("id", "name", "code", "address", "phone", "email", "gstin", "parent_store_id", "is_active", "created_at", "updated_at") values (default, $1, $2, default, default, default, default, default, $3, default, default) returning "id", "name", "code", "address", "phone", "email", "gstin", "parent_store_id", "is_active", "created_at", "updated_at" -- params: ["Test Store", "TEST-09a40b63", true]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: insert into "permissions" ("id", "resource", "action", "description", "created_at") values (default, $1, $2, $3, default) returning "id", "resource", "action", "description", "created_at" -- params: ["inventory", "read", "Read Inventory"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: insert into "permissions" ("id", "resource", "action", "description", "created_at") values (default, $1, $2, $3, default) returning "id", "resource", "action", "description", "created_at" -- params: ["inventory", "create", "Create Inventory"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: select "id", "name", "description", "created_at", "updated_at" from "roles" where "roles"."name" = $1 limit $2 -- params: ["viewer_a6347bbb-eb0c-4875-abbc-aaca87bf7650", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: insert into "roles" ("id", "name", "description", "created_at", "updated_at") values (default, $1, $2, default, default) returning "id", "name", "description", "created_at", "updated_at" -- params: ["viewer_a6347bbb-eb0c-4875-abbc-aaca87bf7650", "Test Role"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: select "id", "name", "description", "created_at", "updated_at" from "roles" where "roles"."name" = $1 limit $2 -- params: ["admin_88d1851e-214f-4d3d-a153-fd4e2ad1389a", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: insert into "roles" ("id", "name", "description", "created_at", "updated_at") values (default, $1, $2, default, default) returning "id", "name", "description", "created_at", "updated_at" -- params: ["admin_88d1851e-214f-4d3d-a153-fd4e2ad1389a", "Test Role"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: insert into "role_permissions" ("role_id", "permission_id") values ($1, $2) -- params: ["5e7747f9-499f-43ed-8136-8f40849e0a16", "77eb2d5a-47da-4786-b8f7-10ba048dfdac"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: insert into "role_permissions" ("role_id", "permission_id") values ($1, $2) -- params: ["cf127fc9-ffa7-4880-96df-33e116d3cc07", "77eb2d5a-47da-4786-b8f7-10ba048dfdac"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: insert into "role_permissions" ("role_id", "permission_id") values ($1, $2) -- params: ["cf127fc9-ffa7-4880-96df-33e116d3cc07", "f8f03635-0ee0-4e73-b32b-d766dffb0c1c"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: insert into "users" ("id", "email", "password_hash", "full_name", "phone", "is_active", "created_at", "updated_at", "deleted_at") values (default, $1, $2, $3, default, $4, default, default, default) returning "id", "email", "password_hash", "full_name", "phone", "is_active", "created_at", "updated_at", "deleted_at" -- params: ["viewer-50d73146-496f-4544-b0c8-cd3de2480fa9@example.com", "$2b$10$lBVmlTweCVYdkP5JrZTmJO1ohOkfDcVDMr.C9t9eQIx3ShuEK75jO", "Test User", true]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: insert into "user_roles" ("id", "user_id", "role_id", "store_id", "can_manipulate_inventory", "created_at") values (default, $1, $2, $3, default, default) returning "id", "user_id", "role_id", "store_id", "can_manipulate_inventory", "created_at" -- params: ["eb61d396-ce92-4b5a-9dd6-a9c3900a4c02", "5e7747f9-499f-43ed-8136-8f40849e0a16", "fe7a26d8-8d6d-4492-baec-0448b99b5730"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: insert into "users" ("id", "email", "password_hash", "full_name", "phone", "is_active", "created_at", "updated_at", "deleted_at") values (default, $1, $2, $3, default, $4, default, default, default) returning "id", "email", "password_hash", "full_name", "phone", "is_active", "created_at", "updated_at", "deleted_at" -- params: ["admin-12bbdbf1-e62f-43ae-a95a-354eac8acb0d@example.com", "$2b$10$cRNJec7KPM2bK1ONzyASau9Ut8dcqdg7.yMRQxWz.GW5eOmaRno6.", "Test User", true]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: insert into "user_roles" ("id", "user_id", "role_id", "store_id", "can_manipulate_inventory", "created_at") values (default, $1, $2, $3, default, default) returning "id", "user_id", "role_id", "store_id", "can_manipulate_inventory", "created_at" -- params: ["0fab0e5a-f57e-456a-b861-967efc2f3ece", "cf127fc9-ffa7-4880-96df-33e116d3cc07", "fe7a26d8-8d6d-4492-baec-0448b99b5730"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: select "id", "email", "password_hash", "full_name", "phone", "is_active", "created_at", "updated_at", "deleted_at" from "users" where "users"."email" = $1 limit $2 -- params: ["viewer-50d73146-496f-4544-b0c8-cd3de2480fa9@example.com", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39m[DEBUG] Login attempt for viewer-50d73146-496f-4544-b0c8-cd3de2480fa9@example.com
+[DEBUG] Input password: password123
+[DEBUG] Stored hash: $2b$10$lBVmlTweCVYdkP5JrZTmJO1ohOkfDcVDMr.C9t9eQIx3ShuEK75jO
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39m[DEBUG] Password valid: true
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: select "userRoles"."id", "userRoles"."user_id", "userRoles"."role_id", "userRoles"."store_id", "userRoles"."can_manipulate_inventory", "userRoles"."created_at", "userRoles_store"."data" as "store", "userRoles_role"."data" as "role" from "user_roles" "userRoles" left join lateral (select json_build_array("userRoles_store"."id", "userRoles_store"."name", "userRoles_store"."code", "userRoles_store"."address", "userRoles_store"."phone", "userRoles_store"."email", "userRoles_store"."gstin", "userRoles_store"."parent_store_id", "userRoles_store"."is_active", "userRoles_store"."created_at", "userRoles_store"."updated_at") as "data" from (select * from "stores" "userRoles_store" where "userRoles_store"."id" = "userRoles"."store_id" limit $1) "userRoles_store") "userRoles_store" on true left join lateral (select json_build_array("userRoles_role"."id", "userRoles_role"."name", "userRoles_role"."description", "userRoles_role"."created_at", "userRoles_role"."updated_at") as "data" from (select * from "roles" "userRoles_role" where "userRoles_role"."id" = "userRoles"."role_id" limit $2) "userRoles_role") "userRoles_role" on true where ("userRoles"."user_id" = $3 and "userRoles"."store_id" = $4) limit $5 -- params: [1, 1, "eb61d396-ce92-4b5a-9dd6-a9c3900a4c02", "fe7a26d8-8d6d-4492-baec-0448b99b5730", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39m2026-02-11 11:00:59 [[32minfo[39m]: User logged in: viewer-50d73146-496f-4544-b0c8-cd3de2480fa9@example.com {
+  "userId": "eb61d396-ce92-4b5a-9dd6-a9c3900a4c02",
+  "storeId": "fe7a26d8-8d6d-4492-baec-0448b99b5730"
+}
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: select "id", "email", "password_hash", "full_name", "phone", "is_active", "created_at", "updated_at", "deleted_at" from "users" where "users"."id" = $1 limit $2 -- params: ["eb61d396-ce92-4b5a-9dd6-a9c3900a4c02", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: select "id", "name", "code", "address", "phone", "email", "gstin", "parent_store_id", "is_active", "created_at", "updated_at" from "stores" where "stores"."id" = $1 limit $2 -- params: ["fe7a26d8-8d6d-4492-baec-0448b99b5730", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: select "userRoles"."id", "userRoles"."user_id", "userRoles"."role_id", "userRoles"."store_id", "userRoles"."can_manipulate_inventory", "userRoles"."created_at", "userRoles_role"."data" as "role" from "user_roles" "userRoles" left join lateral (select json_build_array("userRoles_role"."id", "userRoles_role"."name", "userRoles_role"."description", "userRoles_role"."created_at", "userRoles_role"."updated_at") as "data" from (select * from "roles" "userRoles_role" where "userRoles_role"."id" = "userRoles"."role_id" limit $1) "userRoles_role") "userRoles_role" on true where ("userRoles"."user_id" = $2 and "userRoles"."store_id" = $3) limit $4 -- params: [1, "eb61d396-ce92-4b5a-9dd6-a9c3900a4c02", "fe7a26d8-8d6d-4492-baec-0448b99b5730", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39m2026-02-11 11:00:59 [[33mwarn[39m]: Redis cache miss for permissions {
+  "userId": "eb61d396-ce92-4b5a-9dd6-a9c3900a4c02",
+  "storeId": "fe7a26d8-8d6d-4492-baec-0448b99b5730"
+}
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: select "userRoles"."id", "userRoles"."user_id", "userRoles"."role_id", "userRoles"."store_id", "userRoles"."can_manipulate_inventory", "userRoles"."created_at", "userRoles_role"."data" as "role" from "user_roles" "userRoles" left join lateral (select json_build_array("userRoles_role"."id", "userRoles_role"."name", "userRoles_role"."description", "userRoles_role"."created_at", "userRoles_role"."updated_at", "userRoles_role_rolePermissions"."data") as "data" from (select * from "roles" "userRoles_role" where "userRoles_role"."id" = "userRoles"."role_id" limit $1) "userRoles_role" left join lateral (select coalesce(json_agg(json_build_array("userRoles_role_rolePermissions"."role_id", "userRoles_role_rolePermissions"."permission_id", "userRoles_role_rolePermissions_permission"."data")), '[]'::json) as "data" from "role_permissions" "userRoles_role_rolePermissions" left join lateral (select json_build_array("userRoles_role_rolePermissions_permission"."id", "userRoles_role_rolePermissions_permission"."resource", "userRoles_role_rolePermissions_permission"."action", "userRoles_role_rolePermissions_permission"."description", "userRoles_role_rolePermissions_permission"."created_at") as "data" from (select * from "permissions" "userRoles_role_rolePermissions_permission" where "userRoles_role_rolePermissions_permission"."id" = "userRoles_role_rolePermissions"."permission_id" limit $2) "userRoles_role_rolePermissions_permission") "userRoles_role_rolePermissions_permission" on true where "userRoles_role_rolePermissions"."role_id" = "userRoles_role"."id") "userRoles_role_rolePermissions" on true) "userRoles_role" on true where ("userRoles"."user_id" = $3 and "userRoles"."store_id" = $4) -- params: [1, 1, "eb61d396-ce92-4b5a-9dd6-a9c3900a4c02", "fe7a26d8-8d6d-4492-baec-0448b99b5730"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39m2026-02-11 11:00:59 [[33mwarn[39m]: Failed to cache permissions {
+  "userId": "eb61d396-ce92-4b5a-9dd6-a9c3900a4c02",
+  "storeId": "fe7a26d8-8d6d-4492-baec-0448b99b5730"
+}
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: insert into "sessions" ("id", "user_id", "store_id", "token_hash", "expires_at", "created_at") values (default, $1, $2, $3, $4, default) -- params: ["eb61d396-ce92-4b5a-9dd6-a9c3900a4c02", "fe7a26d8-8d6d-4492-baec-0448b99b5730", "0f99c2411b5cd1cd0b6f6d14203d68b82f15b9d5b67f7e1ce2c7772316323cf0", "2026-02-18T05:30:59.251Z"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: select "id", "email", "password_hash", "full_name", "phone", "is_active", "created_at", "updated_at", "deleted_at" from "users" where "users"."email" = $1 limit $2 -- params: ["admin-12bbdbf1-e62f-43ae-a95a-354eac8acb0d@example.com", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39m[DEBUG] Login attempt for admin-12bbdbf1-e62f-43ae-a95a-354eac8acb0d@example.com
+[DEBUG] Input password: password123
+[DEBUG] Stored hash: $2b$10$cRNJec7KPM2bK1ONzyASau9Ut8dcqdg7.yMRQxWz.GW5eOmaRno6.
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39m[DEBUG] Password valid: true
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: select "userRoles"."id", "userRoles"."user_id", "userRoles"."role_id", "userRoles"."store_id", "userRoles"."can_manipulate_inventory", "userRoles"."created_at", "userRoles_store"."data" as "store", "userRoles_role"."data" as "role" from "user_roles" "userRoles" left join lateral (select json_build_array("userRoles_store"."id", "userRoles_store"."name", "userRoles_store"."code", "userRoles_store"."address", "userRoles_store"."phone", "userRoles_store"."email", "userRoles_store"."gstin", "userRoles_store"."parent_store_id", "userRoles_store"."is_active", "userRoles_store"."created_at", "userRoles_store"."updated_at") as "data" from (select * from "stores" "userRoles_store" where "userRoles_store"."id" = "userRoles"."store_id" limit $1) "userRoles_store") "userRoles_store" on true left join lateral (select json_build_array("userRoles_role"."id", "userRoles_role"."name", "userRoles_role"."description", "userRoles_role"."created_at", "userRoles_role"."updated_at") as "data" from (select * from "roles" "userRoles_role" where "userRoles_role"."id" = "userRoles"."role_id" limit $2) "userRoles_role") "userRoles_role" on true where ("userRoles"."user_id" = $3 and "userRoles"."store_id" = $4) limit $5 -- params: [1, 1, "0fab0e5a-f57e-456a-b861-967efc2f3ece", "fe7a26d8-8d6d-4492-baec-0448b99b5730", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39m2026-02-11 11:00:59 [[32minfo[39m]: User logged in: admin-12bbdbf1-e62f-43ae-a95a-354eac8acb0d@example.com {
+  "userId": "0fab0e5a-f57e-456a-b861-967efc2f3ece",
+  "storeId": "fe7a26d8-8d6d-4492-baec-0448b99b5730"
+}
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: select "id", "email", "password_hash", "full_name", "phone", "is_active", "created_at", "updated_at", "deleted_at" from "users" where "users"."id" = $1 limit $2 -- params: ["0fab0e5a-f57e-456a-b861-967efc2f3ece", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: select "id", "name", "code", "address", "phone", "email", "gstin", "parent_store_id", "is_active", "created_at", "updated_at" from "stores" where "stores"."id" = $1 limit $2 -- params: ["fe7a26d8-8d6d-4492-baec-0448b99b5730", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: select "userRoles"."id", "userRoles"."user_id", "userRoles"."role_id", "userRoles"."store_id", "userRoles"."can_manipulate_inventory", "userRoles"."created_at", "userRoles_role"."data" as "role" from "user_roles" "userRoles" left join lateral (select json_build_array("userRoles_role"."id", "userRoles_role"."name", "userRoles_role"."description", "userRoles_role"."created_at", "userRoles_role"."updated_at") as "data" from (select * from "roles" "userRoles_role" where "userRoles_role"."id" = "userRoles"."role_id" limit $1) "userRoles_role") "userRoles_role" on true where ("userRoles"."user_id" = $2 and "userRoles"."store_id" = $3) limit $4 -- params: [1, "0fab0e5a-f57e-456a-b861-967efc2f3ece", "fe7a26d8-8d6d-4492-baec-0448b99b5730", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39m2026-02-11 11:00:59 [[33mwarn[39m]: Redis cache miss for permissions {
+  "userId": "0fab0e5a-f57e-456a-b861-967efc2f3ece",
+  "storeId": "fe7a26d8-8d6d-4492-baec-0448b99b5730"
+}
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: select "userRoles"."id", "userRoles"."user_id", "userRoles"."role_id", "userRoles"."store_id", "userRoles"."can_manipulate_inventory", "userRoles"."created_at", "userRoles_role"."data" as "role" from "user_roles" "userRoles" left join lateral (select json_build_array("userRoles_role"."id", "userRoles_role"."name", "userRoles_role"."description", "userRoles_role"."created_at", "userRoles_role"."updated_at", "userRoles_role_rolePermissions"."data") as "data" from (select * from "roles" "userRoles_role" where "userRoles_role"."id" = "userRoles"."role_id" limit $1) "userRoles_role" left join lateral (select coalesce(json_agg(json_build_array("userRoles_role_rolePermissions"."role_id", "userRoles_role_rolePermissions"."permission_id", "userRoles_role_rolePermissions_permission"."data")), '[]'::json) as "data" from "role_permissions" "userRoles_role_rolePermissions" left join lateral (select json_build_array("userRoles_role_rolePermissions_permission"."id", "userRoles_role_rolePermissions_permission"."resource", "userRoles_role_rolePermissions_permission"."action", "userRoles_role_rolePermissions_permission"."description", "userRoles_role_rolePermissions_permission"."created_at") as "data" from (select * from "permissions" "userRoles_role_rolePermissions_permission" where "userRoles_role_rolePermissions_permission"."id" = "userRoles_role_rolePermissions"."permission_id" limit $2) "userRoles_role_rolePermissions_permission") "userRoles_role_rolePermissions_permission" on true where "userRoles_role_rolePermissions"."role_id" = "userRoles_role"."id") "userRoles_role_rolePermissions" on true) "userRoles_role" on true where ("userRoles"."user_id" = $3 and "userRoles"."store_id" = $4) -- params: [1, 1, "0fab0e5a-f57e-456a-b861-967efc2f3ece", "fe7a26d8-8d6d-4492-baec-0448b99b5730"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39m2026-02-11 11:00:59 [[33mwarn[39m]: Failed to cache permissions {
+  "userId": "0fab0e5a-f57e-456a-b861-967efc2f3ece",
+  "storeId": "fe7a26d8-8d6d-4492-baec-0448b99b5730"
+}
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39mQuery: insert into "sessions" ("id", "user_id", "store_id", "token_hash", "expires_at", "created_at") values (default, $1, $2, $3, $4, default) -- params: ["0fab0e5a-f57e-456a-b861-967efc2f3ece", "fe7a26d8-8d6d-4492-baec-0448b99b5730", "3d261d0a810dddd7990f934813c61a0ab30f02726d0161435c33f4db9e65e255", "2026-02-18T05:30:59.343Z"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould deny access to protected route without permission
+[22m[39m2026-02-11 11:00:59 [[33mwarn[39m]: Permission denied {
+  "userId": "eb61d396-ce92-4b5a-9dd6-a9c3900a4c02",
+  "requiredPermission": "inventory:create",
+  "userPermissions": [
+    "inventory:read"
+  ]
+}
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: SET client_min_messages TO WARNING
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: TRUNCATE TABLE users, stores, roles CASCADE
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: insert into "stores" ("id", "name", "code", "address", "phone", "email", "gstin", "parent_store_id", "is_active", "created_at", "updated_at") values (default, $1, $2, default, default, default, default, default, $3, default, default) returning "id", "name", "code", "address", "phone", "email", "gstin", "parent_store_id", "is_active", "created_at", "updated_at" -- params: ["Test Store", "TEST-307472fb", true]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: insert into "permissions" ("id", "resource", "action", "description", "created_at") values (default, $1, $2, $3, default) returning "id", "resource", "action", "description", "created_at" -- params: ["inventory", "read", "Read Inventory"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: insert into "permissions" ("id", "resource", "action", "description", "created_at") values (default, $1, $2, $3, default) returning "id", "resource", "action", "description", "created_at" -- params: ["inventory", "create", "Create Inventory"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: select "id", "name", "description", "created_at", "updated_at" from "roles" where "roles"."name" = $1 limit $2 -- params: ["viewer_e96a629c-7d1d-4c67-8222-1e65bd3f684c", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: insert into "roles" ("id", "name", "description", "created_at", "updated_at") values (default, $1, $2, default, default) returning "id", "name", "description", "created_at", "updated_at" -- params: ["viewer_e96a629c-7d1d-4c67-8222-1e65bd3f684c", "Test Role"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: select "id", "name", "description", "created_at", "updated_at" from "roles" where "roles"."name" = $1 limit $2 -- params: ["admin_8df7a1ba-9b1b-4295-8546-acd6cf86196a", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: insert into "roles" ("id", "name", "description", "created_at", "updated_at") values (default, $1, $2, default, default) returning "id", "name", "description", "created_at", "updated_at" -- params: ["admin_8df7a1ba-9b1b-4295-8546-acd6cf86196a", "Test Role"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: insert into "role_permissions" ("role_id", "permission_id") values ($1, $2) -- params: ["2b18a22b-1bbe-46f1-8f4d-6cff8cb7851c", "ec1f5459-e871-44ce-b43a-160c0ca07c15"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: insert into "role_permissions" ("role_id", "permission_id") values ($1, $2) -- params: ["fba7fefb-4d7b-4f40-99c4-179a15e081a8", "ec1f5459-e871-44ce-b43a-160c0ca07c15"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: insert into "role_permissions" ("role_id", "permission_id") values ($1, $2) -- params: ["fba7fefb-4d7b-4f40-99c4-179a15e081a8", "c62b9922-c7d2-4ffb-a373-2ec87fb2e4af"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: insert into "users" ("id", "email", "password_hash", "full_name", "phone", "is_active", "created_at", "updated_at", "deleted_at") values (default, $1, $2, $3, default, $4, default, default, default) returning "id", "email", "password_hash", "full_name", "phone", "is_active", "created_at", "updated_at", "deleted_at" -- params: ["viewer-5a056240-ee85-4342-bbd1-96967f2791be@example.com", "$2b$10$Y9HN5iR99SmFCxlk14v6due3IYdLLKByhcAHbPzBZEnFsEfk862VC", "Test User", true]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: insert into "user_roles" ("id", "user_id", "role_id", "store_id", "can_manipulate_inventory", "created_at") values (default, $1, $2, $3, default, default) returning "id", "user_id", "role_id", "store_id", "can_manipulate_inventory", "created_at" -- params: ["6a873c7d-7ebf-45d1-aad6-ced8414b3b11", "2b18a22b-1bbe-46f1-8f4d-6cff8cb7851c", "5519ad66-161f-4b47-921d-3f34bfc045ab"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: insert into "users" ("id", "email", "password_hash", "full_name", "phone", "is_active", "created_at", "updated_at", "deleted_at") values (default, $1, $2, $3, default, $4, default, default, default) returning "id", "email", "password_hash", "full_name", "phone", "is_active", "created_at", "updated_at", "deleted_at" -- params: ["admin-4225c8d7-919f-472d-b8ed-742668daac99@example.com", "$2b$10$6tRLUrFSP.HWWNtsEf6k3en48YsVhaB3bWwK/f2OPdiGB8YuGqS.a", "Test User", true]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: insert into "user_roles" ("id", "user_id", "role_id", "store_id", "can_manipulate_inventory", "created_at") values (default, $1, $2, $3, default, default) returning "id", "user_id", "role_id", "store_id", "can_manipulate_inventory", "created_at" -- params: ["06150b4e-796d-4936-b7d4-59f17c5d0b29", "fba7fefb-4d7b-4f40-99c4-179a15e081a8", "5519ad66-161f-4b47-921d-3f34bfc045ab"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: select "id", "email", "password_hash", "full_name", "phone", "is_active", "created_at", "updated_at", "deleted_at" from "users" where "users"."email" = $1 limit $2 -- params: ["viewer-5a056240-ee85-4342-bbd1-96967f2791be@example.com", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39m[DEBUG] Login attempt for viewer-5a056240-ee85-4342-bbd1-96967f2791be@example.com
+[DEBUG] Input password: password123
+[DEBUG] Stored hash: $2b$10$Y9HN5iR99SmFCxlk14v6due3IYdLLKByhcAHbPzBZEnFsEfk862VC
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39m[DEBUG] Password valid: true
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: select "userRoles"."id", "userRoles"."user_id", "userRoles"."role_id", "userRoles"."store_id", "userRoles"."can_manipulate_inventory", "userRoles"."created_at", "userRoles_store"."data" as "store", "userRoles_role"."data" as "role" from "user_roles" "userRoles" left join lateral (select json_build_array("userRoles_store"."id", "userRoles_store"."name", "userRoles_store"."code", "userRoles_store"."address", "userRoles_store"."phone", "userRoles_store"."email", "userRoles_store"."gstin", "userRoles_store"."parent_store_id", "userRoles_store"."is_active", "userRoles_store"."created_at", "userRoles_store"."updated_at") as "data" from (select * from "stores" "userRoles_store" where "userRoles_store"."id" = "userRoles"."store_id" limit $1) "userRoles_store") "userRoles_store" on true left join lateral (select json_build_array("userRoles_role"."id", "userRoles_role"."name", "userRoles_role"."description", "userRoles_role"."created_at", "userRoles_role"."updated_at") as "data" from (select * from "roles" "userRoles_role" where "userRoles_role"."id" = "userRoles"."role_id" limit $2) "userRoles_role") "userRoles_role" on true where ("userRoles"."user_id" = $3 and "userRoles"."store_id" = $4) limit $5 -- params: [1, 1, "6a873c7d-7ebf-45d1-aad6-ced8414b3b11", "5519ad66-161f-4b47-921d-3f34bfc045ab", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39m2026-02-11 11:00:59 [[32minfo[39m]: User logged in: viewer-5a056240-ee85-4342-bbd1-96967f2791be@example.com {
+  "userId": "6a873c7d-7ebf-45d1-aad6-ced8414b3b11",
+  "storeId": "5519ad66-161f-4b47-921d-3f34bfc045ab"
+}
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: select "id", "email", "password_hash", "full_name", "phone", "is_active", "created_at", "updated_at", "deleted_at" from "users" where "users"."id" = $1 limit $2 -- params: ["6a873c7d-7ebf-45d1-aad6-ced8414b3b11", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: select "id", "name", "code", "address", "phone", "email", "gstin", "parent_store_id", "is_active", "created_at", "updated_at" from "stores" where "stores"."id" = $1 limit $2 -- params: ["5519ad66-161f-4b47-921d-3f34bfc045ab", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: select "userRoles"."id", "userRoles"."user_id", "userRoles"."role_id", "userRoles"."store_id", "userRoles"."can_manipulate_inventory", "userRoles"."created_at", "userRoles_role"."data" as "role" from "user_roles" "userRoles" left join lateral (select json_build_array("userRoles_role"."id", "userRoles_role"."name", "userRoles_role"."description", "userRoles_role"."created_at", "userRoles_role"."updated_at") as "data" from (select * from "roles" "userRoles_role" where "userRoles_role"."id" = "userRoles"."role_id" limit $1) "userRoles_role") "userRoles_role" on true where ("userRoles"."user_id" = $2 and "userRoles"."store_id" = $3) limit $4 -- params: [1, "6a873c7d-7ebf-45d1-aad6-ced8414b3b11", "5519ad66-161f-4b47-921d-3f34bfc045ab", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39m2026-02-11 11:00:59 [[33mwarn[39m]: Redis cache miss for permissions {
+  "userId": "6a873c7d-7ebf-45d1-aad6-ced8414b3b11",
+  "storeId": "5519ad66-161f-4b47-921d-3f34bfc045ab"
+}
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: select "userRoles"."id", "userRoles"."user_id", "userRoles"."role_id", "userRoles"."store_id", "userRoles"."can_manipulate_inventory", "userRoles"."created_at", "userRoles_role"."data" as "role" from "user_roles" "userRoles" left join lateral (select json_build_array("userRoles_role"."id", "userRoles_role"."name", "userRoles_role"."description", "userRoles_role"."created_at", "userRoles_role"."updated_at", "userRoles_role_rolePermissions"."data") as "data" from (select * from "roles" "userRoles_role" where "userRoles_role"."id" = "userRoles"."role_id" limit $1) "userRoles_role" left join lateral (select coalesce(json_agg(json_build_array("userRoles_role_rolePermissions"."role_id", "userRoles_role_rolePermissions"."permission_id", "userRoles_role_rolePermissions_permission"."data")), '[]'::json) as "data" from "role_permissions" "userRoles_role_rolePermissions" left join lateral (select json_build_array("userRoles_role_rolePermissions_permission"."id", "userRoles_role_rolePermissions_permission"."resource", "userRoles_role_rolePermissions_permission"."action", "userRoles_role_rolePermissions_permission"."description", "userRoles_role_rolePermissions_permission"."created_at") as "data" from (select * from "permissions" "userRoles_role_rolePermissions_permission" where "userRoles_role_rolePermissions_permission"."id" = "userRoles_role_rolePermissions"."permission_id" limit $2) "userRoles_role_rolePermissions_permission") "userRoles_role_rolePermissions_permission" on true where "userRoles_role_rolePermissions"."role_id" = "userRoles_role"."id") "userRoles_role_rolePermissions" on true) "userRoles_role" on true where ("userRoles"."user_id" = $3 and "userRoles"."store_id" = $4) -- params: [1, 1, "6a873c7d-7ebf-45d1-aad6-ced8414b3b11", "5519ad66-161f-4b47-921d-3f34bfc045ab"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39m2026-02-11 11:00:59 [[33mwarn[39m]: Failed to cache permissions {
+  "userId": "6a873c7d-7ebf-45d1-aad6-ced8414b3b11",
+  "storeId": "5519ad66-161f-4b47-921d-3f34bfc045ab"
+}
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: insert into "sessions" ("id", "user_id", "store_id", "token_hash", "expires_at", "created_at") values (default, $1, $2, $3, $4, default) -- params: ["6a873c7d-7ebf-45d1-aad6-ced8414b3b11", "5519ad66-161f-4b47-921d-3f34bfc045ab", "f6bdf3e3e79f0c87afae19b21964b9c2d27c1986ed7ef3b3719b79aa88aa0335", "2026-02-18T05:30:59.964Z"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: select "id", "email", "password_hash", "full_name", "phone", "is_active", "created_at", "updated_at", "deleted_at" from "users" where "users"."email" = $1 limit $2 -- params: ["admin-4225c8d7-919f-472d-b8ed-742668daac99@example.com", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39m[DEBUG] Login attempt for admin-4225c8d7-919f-472d-b8ed-742668daac99@example.com
+[DEBUG] Input password: password123
+[DEBUG] Stored hash: $2b$10$6tRLUrFSP.HWWNtsEf6k3en48YsVhaB3bWwK/f2OPdiGB8YuGqS.a
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39m[DEBUG] Password valid: true
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: select "userRoles"."id", "userRoles"."user_id", "userRoles"."role_id", "userRoles"."store_id", "userRoles"."can_manipulate_inventory", "userRoles"."created_at", "userRoles_store"."data" as "store", "userRoles_role"."data" as "role" from "user_roles" "userRoles" left join lateral (select json_build_array("userRoles_store"."id", "userRoles_store"."name", "userRoles_store"."code", "userRoles_store"."address", "userRoles_store"."phone", "userRoles_store"."email", "userRoles_store"."gstin", "userRoles_store"."parent_store_id", "userRoles_store"."is_active", "userRoles_store"."created_at", "userRoles_store"."updated_at") as "data" from (select * from "stores" "userRoles_store" where "userRoles_store"."id" = "userRoles"."store_id" limit $1) "userRoles_store") "userRoles_store" on true left join lateral (select json_build_array("userRoles_role"."id", "userRoles_role"."name", "userRoles_role"."description", "userRoles_role"."created_at", "userRoles_role"."updated_at") as "data" from (select * from "roles" "userRoles_role" where "userRoles_role"."id" = "userRoles"."role_id" limit $2) "userRoles_role") "userRoles_role" on true where ("userRoles"."user_id" = $3 and "userRoles"."store_id" = $4) limit $5 -- params: [1, 1, "06150b4e-796d-4936-b7d4-59f17c5d0b29", "5519ad66-161f-4b47-921d-3f34bfc045ab", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39m2026-02-11 11:01:00 [[32minfo[39m]: User logged in: admin-4225c8d7-919f-472d-b8ed-742668daac99@example.com {
+  "userId": "06150b4e-796d-4936-b7d4-59f17c5d0b29",
+  "storeId": "5519ad66-161f-4b47-921d-3f34bfc045ab"
+}
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: select "id", "email", "password_hash", "full_name", "phone", "is_active", "created_at", "updated_at", "deleted_at" from "users" where "users"."id" = $1 limit $2 -- params: ["06150b4e-796d-4936-b7d4-59f17c5d0b29", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: select "id", "name", "code", "address", "phone", "email", "gstin", "parent_store_id", "is_active", "created_at", "updated_at" from "stores" where "stores"."id" = $1 limit $2 -- params: ["5519ad66-161f-4b47-921d-3f34bfc045ab", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: select "userRoles"."id", "userRoles"."user_id", "userRoles"."role_id", "userRoles"."store_id", "userRoles"."can_manipulate_inventory", "userRoles"."created_at", "userRoles_role"."data" as "role" from "user_roles" "userRoles" left join lateral (select json_build_array("userRoles_role"."id", "userRoles_role"."name", "userRoles_role"."description", "userRoles_role"."created_at", "userRoles_role"."updated_at") as "data" from (select * from "roles" "userRoles_role" where "userRoles_role"."id" = "userRoles"."role_id" limit $1) "userRoles_role") "userRoles_role" on true where ("userRoles"."user_id" = $2 and "userRoles"."store_id" = $3) limit $4 -- params: [1, "06150b4e-796d-4936-b7d4-59f17c5d0b29", "5519ad66-161f-4b47-921d-3f34bfc045ab", 1]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39m2026-02-11 11:01:00 [[33mwarn[39m]: Redis cache miss for permissions {
+  "userId": "06150b4e-796d-4936-b7d4-59f17c5d0b29",
+  "storeId": "5519ad66-161f-4b47-921d-3f34bfc045ab"
+}
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: select "userRoles"."id", "userRoles"."user_id", "userRoles"."role_id", "userRoles"."store_id", "userRoles"."can_manipulate_inventory", "userRoles"."created_at", "userRoles_role"."data" as "role" from "user_roles" "userRoles" left join lateral (select json_build_array("userRoles_role"."id", "userRoles_role"."name", "userRoles_role"."description", "userRoles_role"."created_at", "userRoles_role"."updated_at", "userRoles_role_rolePermissions"."data") as "data" from (select * from "roles" "userRoles_role" where "userRoles_role"."id" = "userRoles"."role_id" limit $1) "userRoles_role" left join lateral (select coalesce(json_agg(json_build_array("userRoles_role_rolePermissions"."role_id", "userRoles_role_rolePermissions"."permission_id", "userRoles_role_rolePermissions_permission"."data")), '[]'::json) as "data" from "role_permissions" "userRoles_role_rolePermissions" left join lateral (select json_build_array("userRoles_role_rolePermissions_permission"."id", "userRoles_role_rolePermissions_permission"."resource", "userRoles_role_rolePermissions_permission"."action", "userRoles_role_rolePermissions_permission"."description", "userRoles_role_rolePermissions_permission"."created_at") as "data" from (select * from "permissions" "userRoles_role_rolePermissions_permission" where "userRoles_role_rolePermissions_permission"."id" = "userRoles_role_rolePermissions"."permission_id" limit $2) "userRoles_role_rolePermissions_permission") "userRoles_role_rolePermissions_permission" on true where "userRoles_role_rolePermissions"."role_id" = "userRoles_role"."id") "userRoles_role_rolePermissions" on true) "userRoles_role" on true where ("userRoles"."user_id" = $3 and "userRoles"."store_id" = $4) -- params: [1, 1, "06150b4e-796d-4936-b7d4-59f17c5d0b29", "5519ad66-161f-4b47-921d-3f34bfc045ab"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39m2026-02-11 11:01:00 [[33mwarn[39m]: Failed to cache permissions {
+  "userId": "06150b4e-796d-4936-b7d4-59f17c5d0b29",
+  "storeId": "5519ad66-161f-4b47-921d-3f34bfc045ab"
+}
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39mQuery: insert into "sessions" ("id", "user_id", "store_id", "token_hash", "expires_at", "created_at") values (default, $1, $2, $3, $4, default) -- params: ["06150b4e-796d-4936-b7d4-59f17c5d0b29", "5519ad66-161f-4b47-921d-3f34bfc045ab", "6b8f2959d96aee2f20db6ebed78ffa17bab367f0862e1c65b320cecb30189ffc", "2026-02-18T05:31:00.067Z"]
+
+[90mstdout[2m | src/modules/auth/auth.rbac.test.ts[2m > [22m[2mRBAC Integration[2m > [22m[2mshould allow access to higher privilege route for admin
+[22m[39m2026-02-11 11:01:00 [[33mwarn[39m]: Inventory manipulation denied {
+  "userId": "06150b4e-796d-4936-b7d4-59f17c5d0b29",
+  "role": "admin_8df7a1ba-9b1b-4295-8546-acd6cf86196a",
+  "storeId": "5519ad66-161f-4b47-921d-3f34bfc045ab",
+  "endpoint": "/batches"
+}
+
+ [31m❯[39m src/modules/auth/auth.rbac.test.ts [2m([22m[2m3 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 2266[2mms[22m[39m
+     [33m[2m✓[22m[39m should allow access to protected route with correct permission [33m 769[2mms[22m[39m
+     [33m[2m✓[22m[39m should deny access to protected route without permission [33m 772[2mms[22m[39m
+[31m     [31m×[31m should allow access to higher privilege route for admin[39m[33m 724[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m src/modules/auth/auth.rbac.test.ts[2m > [22mRBAC Integration[2m > [22mshould allow access to higher privilege route for admin
+[31m[1mAssertionError[22m: expected 403 not to be 403 // Object.is equality[39m
+[36m [2m❯[22m src/modules/auth/auth.rbac.test.ts:[2m134:37[22m[39m
+    [90m132| [39m            })[33m;[39m
+    [90m133| [39m
+    [90m134| [39m        [34mexpect[39m(response[33m.[39mstatus)[33m.[39mnot[33m.[39m[34mtoBe[39m([34m403[39m)[33m;[39m
+    [90m   | [39m                                    [31m^[39m
+    [90m135| [39m    })[33m;[39m
+    [90m136| [39m})[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m2 passed[39m[22m[90m (3)[39m
+[2m   Start at [22m 11:00:56
+[2m   Duration [22m 3.82s[2m (transform 629ms, setup 408ms, import 1.07s, tests 2.27s, environment 0ms)[22m
+
+npm error Lifecycle script `test` failed with error:
+npm error code 1
+npm error path /Users/marijewellers/ERP-Cluade/apps/api
+npm error workspace @mari-erp/api@1.0.0
+npm error location /Users/marijewellers/ERP-Cluade/apps/api
+npm error command failed
+npm error command sh -c vitest src/modules/auth/auth.rbac.test.ts --run

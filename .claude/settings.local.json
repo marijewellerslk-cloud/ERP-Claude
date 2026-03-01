@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat /Users/marijewellers/ERP-Cluade/packages/shared/src/constants/permissions.ts)",
+      "Bash(npm run db:push:*)",
+      "Bash(curl:*)",
+      "Bash(pkill:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm run:*)",
+      "Bash(npm install:*)",
+      "Bash(npx next lint:*)",
+      "Bash(npx tsc:*)",
+      "Bash(ls:*)",
+      "Bash(lsof:*)",
+      "Bash(xargs:*)",
+      "Bash(docker-compose up:*)",
+      "Bash(pg_ctl:*)",
+      "Bash(npx tsx:*)",
+      "Bash(docker ps:*)",
+      "Bash(docker exec:*)",
+      "Bash(npx drizzle-kit:*)",
+      "Bash(PGPASSWORD=postgres psql:*)",
+      "Bash(grep:*)",
+      "Bash(cat:*)",
+      "Bash(source:*)",
+      "Bash(export DATABASE_URL)",
+      "Bash(npx next build:*)",
+      "Bash(1 sleep 3 grep -i \"error\\\\|warn\\\\|compil\" /tmp/web-server.log)",
+      "Bash(node -e:*)",
+      "Bash(DATABASE_URL=\"postgresql://mari_admin:mari_dev_password_2025@localhost:5432/mari_erp_dev\" npx tsx:*)",
+      "Bash(DATABASE_URL=\"postgresql://mari_admin:mari_dev_password_2025@localhost:5432/mari_erp_dev\" npx tsx -e:*)",
+      "Bash(PGPASSWORD=mari_dev_password_2025 psql:*)",
+      "Bash(python3:*)",
+      "Bash(__NEW_LINE_c698d6802fb525cd__ echo \"\")"
+    ]
+  }
+}
